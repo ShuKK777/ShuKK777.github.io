@@ -425,7 +425,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     if(save){try{localStorage.setItem('nw-lang',l)}catch(e){}}
   }
   var saved=null;try{saved=localStorage.getItem('nw-lang')}catch(e){}
-  setLang(saved||((navigator.language||'').toLowerCase().indexOf('zh')===0?'zh':'en'));
+  setLang(saved==='zh'?'zh':'en');
   document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.set,true)})});
 
   /* in-page nav */
